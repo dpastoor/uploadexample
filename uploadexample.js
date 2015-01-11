@@ -17,15 +17,15 @@ if (Meteor.isClient) {
       // increment the counter when button is clicked
       Session.set("counter", Session.get("counter") + 1);
     },
-    'change .fileInput':funtion(event,template){
-    FS.Utility.eachFile(event, function(){
+    'change .fileInput':function(event,template){
+    FS.Utility.eachFile(event, function(file){
       var fileObj = new FS.File(file);
       fileObj = new FS.File(file);
       // add file to uploads collection
        Uploads.insert(fileObj, function(err){
          console.log(err);
-       })
-    })
+       });
+    });
   }
   });
 }
