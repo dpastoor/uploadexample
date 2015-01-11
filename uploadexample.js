@@ -9,6 +9,9 @@ if (Meteor.isClient) {
   Template.hello.helpers({
     counter: function () {
       return Session.get("counter");
+    },
+    uploads:function(){
+      return Uploads.find(); // gives uploads variable to iterate through
     }
   });
 
