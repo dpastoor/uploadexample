@@ -2,6 +2,9 @@
 Uploads = new FS.Collection('uploads', {
   stores:[new FS.Store.FileSystem('uploads', {path:'~/projectUploads'})]
 });
+Pdfs = new FS.Collection('pdfs', {
+    stores:[new FS.Store.GridFS('pdfs')]
+});
 if (Meteor.isClient) {
   // counter starts at 0
   Session.setDefault("counter", 0);
